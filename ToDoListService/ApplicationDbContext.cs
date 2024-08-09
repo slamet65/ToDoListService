@@ -11,5 +11,6 @@ namespace ToDoListService
 
         public DbSet<User> Users { get; set; }
         public DbSet<Checklist> Checklists { get; set; }
+        public DbSet<ChecklistItem> ChecklistItem { get; set; } = default!;
     }
 }

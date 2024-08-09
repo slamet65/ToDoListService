@@ -18,3 +18,14 @@ create table Checklists (
 	Id int identity(1,1),
 	[Name] varchar(250)
 )
+
+if exists (select 1 from sys.tables where name = 'ChecklistItem')
+	drop table ChecklistItem
+GO
+
+create table ChecklistItem (
+	Id int identity(1,1),
+	[Name] varchar(250),
+	ChecklistId int,
+	[Status] bit
+)
